@@ -17,7 +17,8 @@
     </style>
 </head>
 <body>
-    <script>
+<script>
+    
     var canvas, ctx, ALTURA, LARGURA, VELOCIDADE = 6, maxPulos = 3, estadoAtual, record, img, 
         pontosParaNovaFase = [5, 10, 15, 20], faseAtual = 0,
         labelNovaFase = {
@@ -26,9 +27,9 @@
         
             fadeIn: function(dt) {
                 var fadeInId = setInterval(function() {
-                    if (labelNovaFase.opacidade < 1.0) {
+                    if (labelNovaFase.opacidade < 1.0) 
                             labelNovaFase.opacidade += 0.01;
-                    }
+                    
                         else {
                             clearInterval(fadeInId);
                     }
@@ -243,8 +244,8 @@
                     LARGURA = window.innerWidth;
         
                     if(LARGURA >= 500){
-                        LARGURA = 600
-                        ALTURA = 600
+                        LARGURA = 600;
+                        ALTURA = 600;
                     }
         
                     canvas = document.createElement("canvas");
@@ -259,7 +260,7 @@
         
                     estadoAtual = estados.jogar;
         
-                    record = localStorage.getItem("record")
+                    record = localStorage.getItem("record");
         
                     if (record == null)
                         record = 0;
@@ -304,9 +305,9 @@
                     bloco.desenha();
                     
                     if(estadoAtual == estados.jogar)
-                        jogar.desenha(LARGURA / 2 - perdeu.largura / 2, ALTURA / 2 - jogar.altura / 2);
+                        jogar.desenha(LARGURA / 2 - jogar.largura / 2, ALTURA / 2 - jogar.altura / 2);
         
-                    if(estadoAtual == estados.perdeu)
+                    if(estadoAtual == estados.perdeu) {
                         perdeu.desenha(LARGURA / 2 - perdeu.largura / 2, ALTURA / 2 - perdeu.altura / 2 - spriteRecord.altura / 2);
                     
                         spriteRecord.desenha(LARGURA / 2 - spriteRecord.largura / 2, ALTURA / 2 + perdeu.altura / 2 - spriteRecord.altura / 2 - 25);
@@ -321,10 +322,11 @@
                         else {
                             ctx.fillText(record, 420, 470);
                         }
+                    }
                 }
         
                 main();
-                </script>
+</script>
 </body>
 
 </html>
